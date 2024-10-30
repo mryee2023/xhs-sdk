@@ -60,7 +60,7 @@ func GetRestyClient() *resty.Client {
 		restyClient.SetRetryCount(1)
 		restyClient.SetRetryWaitTime(time.Millisecond * 100)
 		restyClient.SetRetryMaxWaitTime(time.Second)
-		restyClient.SetDebug(os.Getenv("xhs_debug") == "true")
+		//restyClient.SetDebug(os.Getenv("xhs_debug") == "true")
 		restyClient.SetTransport(Transport200())
 	})
 	return restyClient
@@ -69,6 +69,12 @@ func GetRestyClient() *resty.Client {
 func PostWithRestyClient(req []byte) ([]byte, error) {
 
 	cli := GetRestyClient()
+
+	cli.SetDebug(os.Getenv("xhs_debug") == "true")
+	if cli.Debug {
+		cli.EnableTrace()
+		cli.EnableGenerateCurlOnDebug()
+	}
 	cli.SetHeader("Content-Type", "application/json")
 	resp, err := cli.R().SetBody(req).Post(ApiUrl)
 	if err != nil {
