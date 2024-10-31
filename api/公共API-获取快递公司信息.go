@@ -23,13 +23,15 @@ type (
 		BaseResponse
 		Data RespGetExpressCompanyListData `json:"data"`
 	}
+
+	ExpressCompanyInfo struct {
+		ExpressCompanyId   int64  `json:"expressCompanyId"`
+		ExpressCompanyCode string `json:"expressCompanyCode"`
+		ExpressCompanyName string `json:"expressCompanyName"`
+		Comment            string `json:"comment"`
+	}
 	RespGetExpressCompanyListData struct {
-		ExpressCompanyInfos []struct {
-			ExpressCompanyId   int64  `json:"expressCompanyId"`
-			ExpressCompanyCode string `json:"expressCompanyCode"`
-			ExpressCompanyName string `json:"expressCompanyName"`
-			Comment            string `json:"comment"`
-		} `json:"expressCompanyInfos"`
+		ExpressCompanyInfos []ExpressCompanyInfo `json:"expressCompanyInfos"`
 	}
 )
 

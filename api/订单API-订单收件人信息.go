@@ -31,18 +31,19 @@ type (
 		BaseResponse
 		Data RespGetOrderReceiverInfoData `json:"data"`
 	}
+	ReceiverInfo struct {
+		OrderId              string `json:"orderId"`
+		Matched              bool   `json:"matched"`
+		ReceiverProvinceName string `json:"receiverProvinceName"`
+		ReceiverCityName     string `json:"receiverCityName"`
+		ReceiverDistrictName string `json:"receiverDistrictName"`
+		ReceiverTownName     string `json:"receiverTownName"`
+		ReceiverName         string `json:"receiverName"`
+		ReceiverPhone        string `json:"receiverPhone"`
+		ReceiverAddress      string `json:"receiverAddress"`
+	}
 	RespGetOrderReceiverInfoData struct {
-		ReceiverInfos []struct {
-			OrderId              string `json:"orderId"`
-			Matched              bool   `json:"matched"`
-			ReceiverProvinceName string `json:"receiverProvinceName"`
-			ReceiverCityName     string `json:"receiverCityName"`
-			ReceiverDistrictName string `json:"receiverDistrictName"`
-			ReceiverTownName     string `json:"receiverTownName"`
-			ReceiverName         string `json:"receiverName"`
-			ReceiverPhone        string `json:"receiverPhone"`
-			ReceiverAddress      string `json:"receiverAddress"`
-		} `json:"receiverInfos"`
+		ReceiverInfos []ReceiverInfo `json:"receiverInfos"`
 	}
 )
 

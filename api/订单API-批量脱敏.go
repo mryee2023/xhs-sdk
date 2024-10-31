@@ -28,14 +28,15 @@ type (
 		BaseResponse
 		Data RespBatchDesensitiseData `json:"data"`
 	}
+	RespDesensitiseInfoList struct {
+		DataTag          string `json:"dataTag"`
+		EncryptedData    string `json:"encryptedData"`
+		DesensitisedData string `json:"desensitisedData"`
+		ErrorCode        int64  `json:"errorCode"`
+		ErrorMsg         string `json:"errorMsg"`
+	}
 	RespBatchDesensitiseData struct {
-		DesensitiseInfoList []struct {
-			DataTag          string `json:"dataTag"`
-			EncryptedData    string `json:"encryptedData"`
-			DesensitisedData string `json:"desensitisedData"`
-			ErrorCode        int64  `json:"errorCode"`
-			ErrorMsg         string `json:"errorMsg"`
-		} `json:"desensitiseInfoList"`
+		DesensitiseInfoList []RespDesensitiseInfoList `json:"desensitiseInfoList"`
 	}
 )
 

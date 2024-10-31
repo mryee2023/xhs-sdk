@@ -89,25 +89,30 @@ type (
 		SkuERPCode             string                  `json:"skuERPCode"`
 	}
 
+	AfterSale struct {
+		ExpressNo          string `json:"expressNo"`
+		ExpressCompanyCode string `json:"expressCompanyCode"`
+		ExpressCompanyName string `json:"expressCompanyName"`
+		FillExpressNoTime  int64  `json:"fillExpressNoTime"`
+		ExpressSignTime    int64  `json:"expressSignTime"`
+	}
+
+	Exchange struct {
+		ExpressNo          string `json:"expressNo"`
+		ExpressCompanyCode string `json:"expressCompanyCode"`
+		ExpressCompanyName string `json:"expressCompanyName"`
+		FillExpressNoTime  int64  `json:"fillExpressNoTime"`
+	}
+	Order struct {
+		ExpressNo          string `json:"expressNo"`
+		ExpressCompanyCode string `json:"expressCompanyCode"`
+		ExpressCompanyName string `json:"expressCompanyName"`
+	}
+
 	RespGetAfterSaleInfoDataLogisticsInfo struct {
-		AfterSale struct {
-			ExpressNo          string `json:"expressNo"`
-			ExpressCompanyCode string `json:"expressCompanyCode"`
-			ExpressCompanyName string `json:"expressCompanyName"`
-			FillExpressNoTime  int64  `json:"fillExpressNoTime"`
-			ExpressSignTime    int64  `json:"expressSignTime"`
-		} `json:"after_sale"`
-		Exchange struct {
-			ExpressNo          string `json:"expressNo"`
-			ExpressCompanyCode string `json:"expressCompanyCode"`
-			ExpressCompanyName string `json:"expressCompanyName"`
-			FillExpressNoTime  int64  `json:"fillExpressNoTime"`
-		} `json:"exchange"`
-		Order struct {
-			ExpressNo          string `json:"expressNo"`
-			ExpressCompanyCode string `json:"expressCompanyCode"`
-			ExpressCompanyName string `json:"expressCompanyName"`
-		} `json:"order"`
+		AfterSale AfterSale `json:"after_sale"`
+		Exchange  Exchange  `json:"exchange"`
+		Order     Order     `json:"order"`
 	}
 
 	RespGetAfterSaleInfoDataNegotiateRecords struct {
