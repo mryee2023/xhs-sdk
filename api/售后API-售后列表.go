@@ -34,19 +34,19 @@ type (
 		Data RespListAfterSaleInfosData `json:"data"`
 	}
 	RespAfterSaleBasicInfo struct {
-		ReturnsId                string `json:"returnsId"`
-		ReturnType               int64  `json:"returnType"`
-		ReasonId                 int64  `json:"reasonId"`
-		ReasonNameZh             string `json:"reasonNameZh"`
-		Status                   int64  `json:"status"`
-		UserId                   string `json:"userId"`
-		OrderId                  string `json:"orderId"`
-		ApplyTime                int64  `json:"applyTime"`
-		UpdatedAt                int64  `json:"updatedAt"`
-		ExpireTime               int64  `json:"expireTime"`
-		Desc                     string `json:"desc"`
-		ReturnsTag               int64  `json:"returnsTag"`
-		ExpectedRefundAmountYuan int64  `json:"expectedRefundAmountYuan"`
+		ReturnsId                string  `json:"returnsId"`
+		ReturnType               int64   `json:"returnType"`
+		ReasonId                 int64   `json:"reasonId"`
+		ReasonNameZh             string  `json:"reasonNameZh"`
+		Status                   int64   `json:"status"`
+		UserId                   string  `json:"userId"`
+		OrderId                  string  `json:"orderId"`
+		ApplyTime                int64   `json:"applyTime"`
+		UpdatedAt                int64   `json:"updatedAt"`
+		ExpireTime               int64   `json:"expireTime"`
+		Desc                     string  `json:"desc"`
+		ReturnsTag               int64   `json:"returnsTag"`
+		ExpectedRefundAmountYuan float64 `json:"expectedRefundAmountYuan"`
 	}
 	RespListAfterSaleInfosData struct {
 		TotalCount          int64                    `json:"totalCount"`
