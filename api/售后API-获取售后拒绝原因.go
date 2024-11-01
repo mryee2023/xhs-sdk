@@ -26,6 +26,12 @@ func (r ReqAfterSaleRejectReasons) Params(base BaseRequest) []byte {
 type (
 	RespAfterSaleRejectReasons struct {
 		BaseResponse
+		RejectReasons []RespAfterSaleRejectReasonsItem `json:"rejectReasons"`
+	}
+	RespAfterSaleRejectReasonsItem struct {
+		ReasonType int64  `json:"reasonType"`
+		ReasonId   int64  `json:"reasonId"`
+		ReasonName string `json:"reasonName"`
 	}
 )
 
