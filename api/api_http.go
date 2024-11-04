@@ -33,7 +33,7 @@ func CreateFastHttpClient() fasthttp.Client {
 	}
 }
 
-var restyClient *resty.Client
+// var restyClient *resty.Client
 var _once sync.Once
 
 func Transport200() *http.Transport {
@@ -54,15 +54,15 @@ func Transport200() *http.Transport {
 }
 
 func GetRestyClient() *resty.Client {
-	_once.Do(func() {
-		restyClient = resty.New()
-		restyClient.SetTimeout(time.Millisecond * 1500)
-		restyClient.SetRetryCount(1)
-		restyClient.SetRetryWaitTime(time.Millisecond * 100)
-		restyClient.SetRetryMaxWaitTime(time.Second)
-		//restyClient.SetDebug(os.Getenv("xhs_debug") == "true")
-		restyClient.SetTransport(Transport200())
-	})
+	//_once.Do(func() {
+	restyClient := resty.New()
+	restyClient.SetTimeout(time.Millisecond * 1500)
+	restyClient.SetRetryCount(1)
+	restyClient.SetRetryWaitTime(time.Millisecond * 100)
+	restyClient.SetRetryMaxWaitTime(time.Second)
+	//restyClient.SetDebug(os.Getenv("xhs_debug") == "true")
+	restyClient.SetTransport(Transport200())
+	//})
 	return restyClient
 }
 
