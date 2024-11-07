@@ -70,7 +70,7 @@ func PostWithRestyClient(req []byte) ([]byte, error) {
 
 	cli := GetRestyClient()
 
-	cli.SetDebug(os.Getenv("xhs_debug") == "true")
+	cli.SetDebug(os.Getenv("resty_debug") == "true")
 	if cli.Debug {
 		cli.EnableTrace()
 		cli.EnableGenerateCurlOnDebug()
