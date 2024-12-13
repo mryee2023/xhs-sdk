@@ -110,7 +110,7 @@ type (
 	}
 
 	RespGetAfterSaleInfoDataLogisticsInfo struct {
-		AfterSale AfterSale `json:"after_sale"`
+		AfterSale AfterSale `json:"afterSale"`
 		Exchange  Exchange  `json:"exchange"`
 		Order     Order     `json:"order"`
 	}
