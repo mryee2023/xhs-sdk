@@ -30,6 +30,9 @@ func (r ReqProductSearchItemList) Params(base BaseRequest) []byte {
 type (
 	RespProductSearchItemList struct {
 		BaseResponse
+		Data RespProductSearchItemListData `json:"data"`
+	}
+	RespProductSearchItemListData struct {
 		CurrentPage   int64 `json:"currentPage"`
 		PageSize      int64 `json:"pageSize"`
 		Total         int64 `json:"total"`
