@@ -33,14 +33,15 @@ type (
 		Data RespProductSearchItemListData `json:"data"`
 	}
 	RespProductSearchItemListData struct {
-		CurrentPage   int64 `json:"currentPage"`
-		PageSize      int64 `json:"pageSize"`
-		Total         int64 `json:"total"`
-		ItemDetailV3s []struct {
-			Name           string `json:"name"`
-			Id             string `json:"id"` // itemId
-			ItemShortTitle string `json:"itemShortTitle"`
-		} `json:"itemDetailV3s"`
+		CurrentPage   int64                                        `json:"currentPage"`
+		PageSize      int64                                        `json:"pageSize"`
+		Total         int64                                        `json:"total"`
+		ItemDetailV3s []RespProductSearchItemListDataItemDetailV3s `json:"itemDetailV3s"`
+	}
+	RespProductSearchItemListDataItemDetailV3s struct {
+		Name           string `json:"name"`
+		Id             string `json:"id"` // itemId
+		ItemShortTitle string `json:"itemShortTitle"`
 	}
 )
 
