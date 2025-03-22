@@ -45,13 +45,13 @@ var _ Response = new(RespInventoryGetSkuStock)
 
 func (r RespInventoryGetSkuStock) ErrorCode() int64 {
 
-	return r.Data.Response.Code
+	return r.BaseResponse.ErrorCode
 }
 
 func (r RespInventoryGetSkuStock) ErrorMsg() string {
-	return r.Data.Response.Message
+	return r.BaseResponse.ErrorMsg
 }
 
 func (r RespInventoryGetSkuStock) Success() bool {
-	return r.Data.Response.Success
+	return r.BaseResponse.Success
 }
